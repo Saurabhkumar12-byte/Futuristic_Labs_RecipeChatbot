@@ -2,7 +2,7 @@
 
 ![Logo](https://static.wixstatic.com/media/c19454_13483078c1a04cd5aa4e9e7e619c41aa~mv2.png/v1/fill/w_336,h_61,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Horizontal%20logo.png)
 
-Welcome to the Recipe Chatbot project! This application allows users to search for delicious recipes using both text input and voice commands. Whether you are looking for a quick meal or a gourmet dish, our chatbot is here to help you find the perfect recipe.
+Welcome to the Futuristic Labs Recipe Chatbot project! This application allows users to search for delicious recipes using both text input and voice commands. Whether you are looking for a quick meal or a gourmet dish, our chatbot is here to help you find the perfect recipe.
 
 ## Screenshots
 Take a look at our app in action:
@@ -17,13 +17,13 @@ Take a look at our app in action:
 
 - **App Overview (`app_overview.jpg`)**: Provides a general overview of the React Native application interface, showcasing various functionalities and components.
   
-- **Text Search (`text_search.jpg`)**: Demonstrates the text-based search feature within the app, likely showing a search input field and search results related to recipes.
+- **Text Search (`text_search.jpg`)**: Demonstrates the text-based search feature within the app, showing a search input field and search results related to recipes.
   
 - **Voice Search (`voice_search.jpg`)**: Illustrates the voice recognition feature of the application, allowing users to search for recipes using voice commands.
   
 - **Dark Mode (`dark_mode.jpg`)**: Displays the application interface in dark mode, featuring a color scheme optimized for low-light environments.
   
-- **Local Storage (`local_storage.jpg`)**: Likely depicts the local storage functionality of the app, indicating how data such as user preferences or favorite recipes are stored locally on the device.
+- **Local Storage (`local_storage.jpg`)**: Depicts the local storage functionality of the app, indicating how last searched recipes of the user is stored locally on the device.
 
 ## Overview
 
@@ -75,6 +75,9 @@ The Recipe Chatbot is a React Native application that allows users to search for
 - `axios` for API requests.
 - `async-storage` for local storage.
 - `styled-components` for theming.
+- `react-native-simple-toast` for showing toast messages.
+- `react-native-dotenv` for environment variables.
+- `react-native-svg` for svg icons.
 
 ## Folder Structure
 
@@ -126,5 +129,3 @@ RecipeChatbot/
 ## Notes
 
 - Ensure all dependencies are installed before running the application.
-- Handle edge cases and errors gracefully, providing meaningful error messages.
-- This project is designed as a functional prototype, focusing on core features over UI polish.
