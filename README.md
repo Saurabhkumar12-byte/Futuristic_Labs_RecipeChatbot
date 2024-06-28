@@ -18,7 +18,7 @@ The Recipe Chatbot is a React Native application that allows users to search for
     ```
 
 3. **Add your Spoonacular API key:**
-    - Register [here](https://spoonacular.com/food-api) and grab you api **API key**
+    - Register [here](https://spoonacular.com/food-api) and grab your **API key**
     - Create a `.env` file in the root of the project:
 
     ```
