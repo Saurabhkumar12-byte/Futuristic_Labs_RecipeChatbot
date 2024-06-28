@@ -122,7 +122,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({recipe}) => {
         {recipe.pricePerServing !== undefined && (
           <View style={styles.fieldContainer}>
             <Text style={styles.fieldName}>Price per serving:</Text>
-            <Text style={styles.fieldValue}>${recipe.pricePerServing}</Text>
+            <Text style={styles.fieldValue}>₹{recipe.pricePerServing}</Text>
           </View>
         )}
         {recipe.cheap !== undefined && (
