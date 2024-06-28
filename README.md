@@ -4,6 +4,11 @@
 Welcome to the Recipe Chatbot project! Here's a screenshot of our app in action:
 
 ![App Screenshot](src/assets/images/listen.jpg)
+![App Screenshot](src/assets/images/local.jpg)
+![App Screenshot](src/assets/images/overview.jpg)
+![App Screenshot](src/assets/images/seach.jpg)
+![App Screenshot](src/assets/images/darkmode.jpg)
+
 
 ## Overview
 
