@@ -1,8 +1,7 @@
-// src/api/recipeApi.ts
-
 import axios from 'axios';
-import { SPOONACULAR_API_KEY } from '@env';
-import { Recipe } from '../types/types';
+import {SPOONACULAR_API_KEY} from '@env';
+import {Recipe} from '../types/types';
+import Toast from 'react-native-simple-toast';
 
 const api = axios.create({
   baseURL: 'https://api.spoonacular.com/recipes',
@@ -17,6 +16,7 @@ export const fetchRecipes = async (query: string): Promise<Recipe[]> => {
       number: 10,
     },
   });
+  Toast.show('here are your recipes', Toast.SHORT);
 
   return response.data.results.map((item: any) => ({
     id: item.id,

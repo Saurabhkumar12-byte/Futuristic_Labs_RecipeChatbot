@@ -1,8 +1,7 @@
-// src/hooks/useVoiceRecognition.ts
-
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 import Voice from 'react-native-voice';
-import { SpeechResultsEvent, SpeechErrorEvent } from 'react-native-voice';
+import {SpeechResultsEvent, SpeechErrorEvent} from 'react-native-voice';
+import Toast from 'react-native-simple-toast';
 
 type UseVoiceRecognitionReturn = {
   isListening: boolean;
@@ -10,18 +9,23 @@ type UseVoiceRecognitionReturn = {
   stopListening: () => void;
 };
 
-export const useVoiceRecognition = (setQuery: (query: string) => void): UseVoiceRecognitionReturn => {
+export const useVoiceRecognition = (
+  setQuery: (query: string) => void,
+  fetchResults: (query: string) => void,
+  query: string,
+): UseVoiceRecognitionReturn => {
   const [isListening, setIsListening] = useState(false);
 
   const onSpeechResults = (event: SpeechResultsEvent) => {
     if (event.value && event.value.length > 0) {
-      console.log("result",event.value[0])
       setQuery(event.value[0]);
+      fetchResults(query);
     }
   };
 
   const onSpeechError = (event: SpeechErrorEvent) => {
     console.error(event.error);
+    Toast.show('Unable to here you!', Toast.SHORT);
   };
 
   useEffect(() => {
@@ -29,15 +33,16 @@ export const useVoiceRecognition = (setQuery: (query: string) => void): UseVoice
     Voice.onSpeechError = onSpeechError;
 
     return () => {
-      Voice.onSpeechResults = undefined; // Clean up by setting to undefined
-      Voice.onSpeechError = undefined; // Clean up by setting to undefined
+      Voice.onSpeechResults = undefined;
+      Voice.onSpeechError = undefined;
     };
   }, []);
 
   const startListening = async () => {
     try {
-      await (Voice.start as (locale: string) => Promise<void>)('en-US'); // Type assertion
+      await (Voice.start as (locale: string) => Promise<void>)('en-US');
       setIsListening(true);
+      Toast.show('listening you..', Toast.SHORT);
     } catch (e) {
       console.error(e);
     }
@@ -45,7 +50,9 @@ export const useVoiceRecognition = (setQuery: (query: string) => void): UseVoice
 
   const stopListening = async () => {
     try {
-      await (Voice.stop as () => Promise<void>)(); // Type assertion
+      await (Voice.stop as () => Promise<void>)();
+      Toast.show('listening stops..', Toast.SHORT);
+
       setIsListening(false);
     } catch (e) {
       console.error(e);

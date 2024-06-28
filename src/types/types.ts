@@ -1,18 +1,8 @@
-// src/types/types.ts
-
-// export interface Recipe {
-//     id: number;
-//     title: string;
-//     ingredients: string[];
-//     instructions: string;
-//   }
-  
   export interface VoiceRecognitionResults {
     value: string[];
   }
   
 
-// src/types/types.ts
 export interface Recipe {
   id: number;
   title: string;

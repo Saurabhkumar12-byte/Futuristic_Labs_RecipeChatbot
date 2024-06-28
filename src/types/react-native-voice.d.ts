@@ -1,5 +1,3 @@
-// src/types/react-native-voice.d.ts
-
 declare module 'react-native-voice' {
   export interface SpeechResultsEvent {
     value: string[];

@@ -1,16 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import { View, TextInput, Text, FlatList, TouchableOpacity, useColorScheme, StyleSheet } from 'react-native';
-import { fetchRecipes } from '../api/recipeApi';
-import { useVoiceRecognition } from '../hooks/useVoiceRecognition';
+import React, {useState, useEffect} from 'react';
+import {
+  View,
+  TextInput,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  useColorScheme,
+  StyleSheet,
+} from 'react-native';
+import {fetchRecipes} from '../api/recipeApi';
+import {useVoiceRecognition} from '../hooks/useVoiceRecognition';
 import RecipeCard from '../components/RecipeCard';
-import { saveToLocalStorage, getFromLocalStorage } from '../services/localstorage';
+import {
+  saveToLocalStorage,
+  getFromLocalStorage,
+} from '../services/localstorage';
 import commonStyles from '../styles/styles'; // Import common styles from styles/styles.ts
-import { Recipe } from '../types/types';
+import {Recipe} from '../types/types';
 
 const ChatbotScreen = () => {
   const [query, setQuery] = useState<string>('');
   const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const { startListening, stopListening, isListening } = useVoiceRecognition(setQuery);
+  const {startListening, stopListening, isListening} = useVoiceRecognition(
+    setQuery,
+    fetchRecipes,
+    query,
+  );
   const colorScheme = useColorScheme() || 'light';
 
   const handleFetchRecipes = async () => {
@@ -19,7 +34,7 @@ const ChatbotScreen = () => {
       setRecipes(results);
       await saveToLocalStorage('lastQuery', results);
     } catch (error) {
-      console.error("Error fetching recipes:", error);
+      console.error('Error fetching recipes:', error);
     }
   };
 
@@ -31,7 +46,7 @@ const ChatbotScreen = () => {
           setRecipes(lastQuery);
         }
       } catch (error) {
-        console.error("Error loading last query from local storage:", error);
+        console.error('Error loading last query from local storage:', error);
       }
     };
 
@@ -39,7 +54,11 @@ const ChatbotScreen = () => {
   }, []);
 
   return (
-    <View style={[commonStyles.container, { backgroundColor: colorScheme === 'dark' ? '#1e1e1e' : '#f5f5f5' }]}>
+    <View
+      style={[
+        commonStyles.container,
+        {backgroundColor: colorScheme === 'dark' ? '#1e1e1e' : '#f5f5f5'},
+      ]}>
       <TextInput
         style={[
           styles.input,
@@ -54,17 +73,23 @@ const ChatbotScreen = () => {
         onChangeText={setQuery}
       />
       <FlatList
-        style={{ flex: 1 }}
+        style={{flex: 1}}
         data={recipes}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <RecipeCard recipe={item} />}
+        keyExtractor={item => item.id.toString()}
+        renderItem={({item}) => <RecipeCard recipe={item} />}
       />
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={[styles.button, { backgroundColor: '#FFA500' }]} onPress={handleFetchRecipes}>
+        <TouchableOpacity
+          style={[styles.button, {backgroundColor: '#FFA500'}]}
+          onPress={handleFetchRecipes}>
           <Text style={styles.buttonText}>Find Recipes</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.button, { backgroundColor: '#3CB371' }]} onPress={isListening ? stopListening : startListening}>
-          <Text style={styles.buttonText}>{isListening ? "Stop Listening" : "Listen Now"}</Text>
+        <TouchableOpacity
+          style={[styles.button, {backgroundColor: '#3CB371'}]}
+          onPress={isListening ? stopListening : startListening}>
+          <Text style={styles.buttonText}>
+            {isListening ? 'Stop Listening' : 'Listen Now'}
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -92,7 +117,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 8,
     // paddingVertical: 8,
-    paddingTop:10,
+    paddingTop: 10,
     borderTopWidth: 1,
     borderTopColor: '#ccc',
   },
