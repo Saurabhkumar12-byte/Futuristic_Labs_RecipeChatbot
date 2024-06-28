@@ -1,6 +1,6 @@
 # Recipe Chatbot
 
-![Logo](src/assets/images/logo.png)
+![Logo](https://static.wixstatic.com/media/c19454_13483078c1a04cd5aa4e9e7e619c41aa~mv2.png/v1/fill/w_336,h_61,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Horizontal%20logo.png)
 
 Welcome to the Recipe Chatbot project! This application allows users to search for delicious recipes using both text input and voice commands. Whether you are looking for a quick meal or a gourmet dish, our chatbot is here to help you find the perfect recipe.
 
