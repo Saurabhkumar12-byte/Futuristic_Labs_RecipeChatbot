@@ -1,8 +1,14 @@
 # Recipe Chatbot
 
+## Screenshots
+Welcome to the Recipe Chatbot project! Here's a screenshot of our app in action:
+
+![App Screenshot](src/assets/images/listen.jpg)
+
 ## Overview
 
 The Recipe Chatbot is a React Native application that allows users to search for food recipes using text input or voice recognition. It integrates with the Spoonacular API to fetch recipes based on user queries and displays detailed information including ingredients and cooking instructions.
+
 
 ## Setup
 
@@ -93,10 +99,6 @@ RecipeChatbot/
 2. **Navigation:**
    - Navigate between screens using the bottom tab bar.
    - Currently, the app only includes the "Chatbot" tab.
-
-## Screenshots
-
-- Add screenshots of your application here to showcase its functionality.
 
 ## Notes
 
