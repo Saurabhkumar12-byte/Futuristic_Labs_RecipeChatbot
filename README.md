@@ -8,11 +8,11 @@ Welcome to the Futuristic Labs Recipe Chatbot project! This application allows u
 Take a look at our app in action:
 
 <p float="left">
-  <img src="src/assets/images/app_overview.jpg" width="200" />
-  <img src="src/assets/images/text_search.jpg" width="200" />
-  <img src="src/assets/images/voice_search.jpg" width="200" />
-  <img src="src/assets/images/dark_mode.jpg" width="200" />
-  <img src="src/assets/images/local_storage.jpg" width="200" /> 
+  <img src="src/assets/images/app_overview.jpg" width="250" />
+  <img src="src/assets/images/text_search.jpg" width="250" />
+  <img src="src/assets/images/voice_search.jpg" width="250" />
+  <img src="src/assets/images/dark_mode.jpg" width="250" />
+  <img src="src/assets/images/local_storage.jpg" width="250" /> 
 </p>
 
 - **App Overview (`app_overview.jpg`)**: Provides a general overview of the React Native application interface, showcasing various functionalities and components.
