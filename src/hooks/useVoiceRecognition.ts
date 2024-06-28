@@ -25,7 +25,7 @@ export const useVoiceRecognition = (
 
   const onSpeechError = (event: SpeechErrorEvent) => {
     console.error(event.error);
-    Toast.show('Unable to here you!', Toast.SHORT);
+    Toast.show('Unable to hear you!', Toast.SHORT);
   };
 
   useEffect(() => {
