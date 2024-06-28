@@ -3,11 +3,13 @@
 ## Screenshots
 Welcome to the Recipe Chatbot project! Here's a screenshot of our app in action:
 
-![App Screenshot](src/assets/images/listen.jpg)
-![App Screenshot](src/assets/images/local.jpg)
-![App Screenshot](src/assets/images/overview.jpg)
-![App Screenshot](src/assets/images/seach.jpg)
-![App Screenshot](src/assets/images/darkmode.jpg)
+<p float="left">
+  <img src="src/assets/images/listen.jpg" width="200" />
+  <img src="src/assets/images/local.jpg" width="200" /> 
+  <img src="src/assets/images/overview.jpg" width="200" />
+  <img src="src/assets/images/seach.jpg" width="200" />
+  <img src="src/assets/images/darkmode.jpg" width="200" />
+</p>
 
 
 ## Overview
