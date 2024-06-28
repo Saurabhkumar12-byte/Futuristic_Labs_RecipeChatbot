@@ -49,34 +49,36 @@ The Recipe Chatbot is a React Native application that allows users to search for
 
 ## Folder Structure
 
+```
 RecipeChatbot/
 ├── android/
 ├── ios/
 ├── src/
-│ ├── api/
-│ │ └── recipeApi.ts # API functions for fetching recipes
-│ ├── components/
-│ │ └── RecipeCard.tsx # Component for displaying recipe details
-│ ├── hooks/
-│ │ └── useVoiceRecognition.ts# Custom hook for voice recognition
-│ ├── navigation/
-│ │ └── AppNavigator.tsx # Navigation setup using react-navigation
-│ ├── screens/
-│ │ └── ChatbotScreen.tsx # Chatbot screen with recipe search functionality
-│ ├── services/
-│ │ ├── localStorage.ts # Functions for saving and loading data locally
-│ │ └── voiceService.ts # Integration with voice recognition service
-│ ├── styles/
-│ │ └── styles.ts # Common styles for the application
-│ ├── types/
-│ │ └── types.ts # Type definitions used across the app
-│ └── utils/
-│ └── helpers.ts # Utility functions and helpers
-├── .env # Environment variable for API key
-├── App.tsx # Main entry point of the application
-├── README.md # This readme file
+│   ├── api/
+│   │   └── recipeApi.ts         # API functions for fetching recipes
+│   ├── components/
+│   │   └── RecipeCard.tsx       # Component for displaying recipe details
+│   ├── hooks/
+│   │   └── useVoiceRecognition.ts# Custom hook for voice recognition
+│   ├── navigation/
+│   │   └── AppNavigator.tsx     # Navigation setup using react-navigation
+│   ├── screens/
+│   │   └── ChatbotScreen.tsx    # Chatbot screen with recipe search functionality
+│   ├── services/
+│   │   ├── localStorage.ts      # Functions for saving and loading data locally
+│   │   └── voiceService.ts      # Integration with voice recognition service
+│   ├── styles/
+│   │   └── styles.ts            # Common styles for the application
+│   ├── types/
+│   │   └── types.ts             # Type definitions used across the app
+│   └── utils/
+│       └── helpers.ts           # Utility functions and helpers
+├── .env                          # Environment variable for API key
+├── App.tsx                       # Main entry point of the application
+├── README.md                     # This readme file
 ├── package.json
 └── tsconfig.json
+```
 
 
 ## Usage
